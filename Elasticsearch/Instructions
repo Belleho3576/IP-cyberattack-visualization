@@ -1,0 +1,15 @@
+Using the files in the folder, we can upload cyberattack data downloaded from logstash to an Elasticsearch server.
+
+Notes:
+If you already have an ES server set up and data is already being stored in it, this step is unecessary. 
+
+Before storing data into the ES server, you need to start a server first(the steps are as follows):
+- download elastic search from the website with your according os
+- follow the instructions on the official website to start the server 
+- *I had some troubles starting the server and I fixed it by going to the elasticsearch folder --> config --> elasticsearch.yml and setting xpack.security.http.ssl: enabled: and xpack.security.enabled: to be false. 
+
+
+Two files in this folder:
+store_ES - this python file takes the cyberattack data from the json file (Search_query.json) and stores it into the elasticsearch server 
+Search_quety.json - the data 
+
