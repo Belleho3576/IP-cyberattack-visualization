@@ -1,15 +1,20 @@
 # IP-cyberattack-visualization
 
-**disclaimer** 
+**Disclaimer**
+
 Most of the code of this project is taken from https://github.com/MatthewClarkMay/geoip-attack-map which is made by MatthewClarkMay 
 
-What I have changed are some debugging due to upgrades and using my own data set that is stored in an elasticsearch server rather than generating dummy traffic
+What I have changed are some debugged codes due to upgrades and expired websites and using my own data set that is stored in an elasticsearch server rather than generating dummy traffic. 
 
 ### Ubuntu 
-This project requires an Ubuntu 20.04.
+This project requires an Ubuntu 20.04 which uses python3.8.
 
+### Configurations
+- Use you own Mapbox API access token which can be geernated for free to maintain the map - can change that in the map.js file in AttackMapServer --> static --> map.js
+- Change root access to the data generation python file if you wish to replace it without another of your own 
+- Remember, this code will only run correctly in a production environment after personalizing the parsing functions. The default parsing function is only written to parse gen_data.py traffic.**
 
-### to set up: the code is mostly taken from MatthewClarkMay's github
+### Set up: the code is mostly taken from MatthewClarkMay's github
 
 ### Deploy example
 Tested on Ubuntu 20.04 LTS.
@@ -38,7 +43,7 @@ Tested on Ubuntu 20.04 LTS.
   ```
 * Configure the Data Server DB:
   
-    ```sh
+  ```sh
   cd DataServerDB
   ./db-dl.sh
   cd ..
@@ -46,28 +51,19 @@ Tested on Ubuntu 20.04 LTS.
   ```
 * Start the Data Server:
 
-    ```sh
+  ```sh
   cd DataServer
   sudo python3 DataServer.py
 
   ```
   
-* Start the Syslog Gen Script, inside DataServer directory:
+* Start the Data Generation Script inside DataServer directory:
 
   * Open a new terminal tab (Ctrl+Shift+T, on Ubuntu).
   
     ```sh
     python3 gen_data.py
     ```
-
-* Configure the Attack Map Server, extract the flags to the right place:
-
-  * Open a new terminal tab (Ctrl+Shift+T, on Ubuntu).
-  
-    ```sh
-    cd AttackMapServer/
-    unzip static/flags.zip
-    ``` 
  
 * Start the Attack Map Server:
   
