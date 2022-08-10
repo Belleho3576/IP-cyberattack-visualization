@@ -4,12 +4,18 @@ Notes:
 If you already have an ES server set up and data is already being stored in it, this step is unecessary. 
 
 Before storing data into the ES server, you need to start a server first(the steps are as follows):
-- download elastic search from the website with your according os
+- download elasticsearch from the official website with your according os
 - follow the instructions on the official website to start the server 
-- *I had some troubles starting the server and I fixed it by going to the elasticsearch folder --> config --> elasticsearch.yml and setting xpack.security.http.ssl: enabled: and xpack.security.enabled: to be false. 
+*I had some troubles starting the server and I fixed it by going to the elasticsearch folder --> config --> elasticsearch.yml and setting xpack.security.http.ssl: enabled: and xpack.security.enabled: to false. 
 
 
-Two files in this folder:
+The two files in this folder:
 store_ES - this python file takes the cyberattack data from the json file (Search_query.json) and stores it into the elasticsearch server 
-Search_quety.json - the data 
+Search_query.json - the data 
+
+Run these files through a compiler or the terminal making sure that they are in the same folder so you store_ES and find the Search_query.json
+
+You can configure these files as you like, but if you change the name of the json file, you will also have to change it in store_ES as when Search_query.json is referenced. 
+
+
 
