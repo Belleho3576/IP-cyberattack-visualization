@@ -7,11 +7,11 @@ Most of the code of this project is taken from https://github.com/MatthewClarkMa
 What I have changed are some debugged codes due to upgrades and expired websites and using my own data set that is stored in an elasticsearch server rather than generating dummy traffic. 
 
 ### Ubuntu 
-This project requires an Ubuntu 20.04 which uses python3.8.
+This project is tested on LTS Ubuntu 20.04 which uses python 3.8.
 
 ### Configurations
-- Use you own Mapbox API access token which can be geernated for free to maintain the map - can change that in the map.js file in AttackMapServer --> static --> map.js
-- Change root access to the data generation python file if you wish to replace it without another of your own 
+- Use you own Mapbox API access token which can be generated for free to maintain the map - can change that in the map.js file in AttackMapServer --> static --> map.js
+- Change root access to the gen_data python file if you wish to replace it with another of your own 
 - Remember, this code will only run correctly in a production environment after personalizing the parsing functions. The default parsing function is only written to parse gen_data.py traffic.**
 
 ### Set up: the code is mostly taken from MatthewClarkMay's github
